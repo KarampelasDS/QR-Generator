@@ -1,12 +1,43 @@
-:root{
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+  --background : #181818;
+  --accent : #7A1CAC;
+  --text: #fff;
+  font-family: "Montserrat", sans-serif;
+  color: var(--text);
+  margin: 0;
+  padding: 0;
   text-align: center;
-  
+  background-color: var(--background);
+  font-size: 2rem;
 }
 
 .Container{
-  border: 1px solid;
   display: flex;
   flex-direction: column;
-  gap:20px;
+  gap:50px;
   align-items: center;
+}
+
+.Title{
+  color: var(--text);
+  font-size: 3rem;
+}
+
+.QRCode{
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.Input{
+  font-size: 3rem;
+  border-radius: 8px;
+  border: 5px solid var(--accent);
+}
+
+.Downloads{
+  display: flex;
+  gap: 30px;
 }

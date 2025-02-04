@@ -1,0 +1,9 @@
+.SaveButton{
+    font-size: 3rem;
+    background-color: var(--accent);
+    color: var(--text);
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    padding: 8px;
+  }
