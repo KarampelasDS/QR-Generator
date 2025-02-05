@@ -48,6 +48,8 @@ body{
   background-color: #ffffff;
   padding-bottom: 0.5rem;
   border-radius: 8px;
+  position: absolute;
+  top: 50%;
 }
 
 .ColorPicker{
@@ -108,5 +110,8 @@ h1{
     gap: 60px;
   }
   
+  .ColorsContainer{
+    touch-action: none;
+  }
 
 }
