@@ -10,6 +10,8 @@ function App() {
   const [link, setLink] = useState("www.google.com");
   const [color,setColor] = useState("#000000");
   const [bgColor,setBgColor] = useState("#ffffff");
+  const [visibleFg,setVisibleFg] = useState(false);
+  const [visibleBg,setVisibleBg] = useState(false);
 
   const printPng = () => {
   htmlToImage.toBlob(document.getElementById('QRCode'))
@@ -33,28 +35,38 @@ function App() {
       <div className='ColorsContainer'>
         <div className='ColorPicker'>
           <span>Foreground Color</span>
-          <button className='ColorButton' style={{backgroundColor:color}} onClick={()=>{console.log("among")}}/>
+          <button className='ColorButton' style={{backgroundColor:color}} onClick={()=>{
+            setVisibleFg(!visibleFg);
+          }}/>
+          {visibleFg && <div className='ColorPickerBackground'>
           <SketchPicker
           color={color}
           onChange={(color)=>{setColor(color.hex)}}
           disableAlpha={true}
           />
+          <Button click={()=>{setVisibleFg(!visibleFg)}}>Done</Button>
+          </div>}
         </div>
-    
+
         <div className='ColorPicker'>
           <span>Background Color</span>
-          <button className='ColorButton' style={{backgroundColor:bgColor}} onClick={()=>{console.log("among")}}/>
+          <button className='ColorButton' style={{backgroundColor:bgColor}} onClick={()=>{
+            setVisibleBg(!visibleBg);
+          }}/>
+          {visibleBg && <div className='ColorPickerBackground'>
           <SketchPicker
           color={bgColor}
           onChange={(bgColor)=>{setBgColor(bgColor.hex)}}
           disableAlpha={true}
           />
+          <Button click={()=>{setVisibleBg(!visibleBg)}}>Done</Button>
+          </div>}
         </div>
-      </div>
+        </div>
 
-      <div className='Downloads' onClick={printPng}>
-      <Button>Save PNG</Button>
-      </div>
+          <div >
+          <Button className="SaveButton" click={printPng}><h1>Save PNG</h1></Button>
+          </div>
       
     </div>
   )
