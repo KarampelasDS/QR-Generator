@@ -43,6 +43,7 @@ function App() {
           color={color}
           onChange={(color)=>{setColor(color.hex)}}
           disableAlpha={true}
+          className='NoScroll'
           />
           <Button click={()=>{setVisibleFg(!visibleFg)}}>Done</Button>
           </div>}
@@ -58,6 +59,7 @@ function App() {
           color={bgColor}
           onChange={(bgColor)=>{setBgColor(bgColor.hex)}}
           disableAlpha={true}
+          className='NoScroll'
           />
           <Button click={()=>{setVisibleBg(!visibleBg)}}>Done</Button>
           </div>}
